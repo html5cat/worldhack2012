@@ -9,3 +9,11 @@ Template.worldhack.photos = function () {
 Template.worldhack.meta = function () {
     return Meta.find();
 };
+
+// function getNikonCanonIndex() {
+
+//   console.log(Meta.find( {"nikonCount"} ));
+
+// }
+
+// getNikonCanonIndex();

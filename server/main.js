@@ -8,7 +8,7 @@ Meteor.startup(function() {
         });
     });
 
-    updatePhotos();
+    Meteor.setInterval( function() { updatePhotos(); }, 60000 );
 
     Meteor.publish("photos", function() {
         return Photos.find();
@@ -56,6 +56,16 @@ function updatePhotos() {
 
       // Sync the cars for this location.
       Photos.remove({});
+      Meta.remove({});
+
+      var nikonCount = 0;
+      var canonCount = 0;
+
+      var nikonId = Meta.insert({name: "Nikon", count: nikonCount });
+      var canonId = Meta.insert({name: "Canon", count: canonCount });
+
+      var canon = new RegExp('canon','i');
+      var nikon = new RegExp('nikon','i');
 
       for (var i = 0; i < photos.length; i++) {
 
@@ -70,19 +80,23 @@ function updatePhotos() {
 
           var photo = JSON.parse(response.content).photo;
 
-          // var photo = photos[i];
+          if ( nikon.test(photo.camera) ){
+            nikonCount++;
+            Meta.update({_id: nikonId}, {name: "Nikon", count: nikonCount });
+          }
 
-          var nikon = new RegExp('nikon','i');
+          if ( canon.test(photo.camera) ){
+            canonCount++;
+            Meta.update({_id: canonId}, {name: "Canon", count: canonCount });
+          }
 
-          console.log(photo.camera + " | " + nikon.test(photo.camera));
+          // console.log(nikonCount + " | " + canonCount);
 
           Photos.insert(photo);
         });
       }
 
-      Meta.remove({});
-      Meta.insert({ "nikonIndex": 69 });
 
-      console.log('updatePhotos');
+      console.log('#updatePhotos done!');
   });
 }
