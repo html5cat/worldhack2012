@@ -1,37 +1,28 @@
 <head>
-  <title>Leaderboard</title>
+  <title>Yuriy Dybskiy's WorldHack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-  <div id="outer">
+  <section class=fb-login>
     {{> loginButtons}}
-    {{> leaderboard}}
-  </div>
+  </section>
+
+  <section class="row-fluid">
+    <section class="span12">
+      {{> worldhack}}
+    </section>
+  </section>
 </body>
 
-<template name="leaderboard">
-  <div class="leaderboard">
-    {{#each players}}
-      {{> player}}
-    {{/each}}
-  </div>
-
-  {{#if selected_name}}
-  <div class="details">
-    <div class="name">{{selected_name}}</div>
-    <input type="button" class="inc" value="Give 5 points" />
-  </div>
-  {{/if}}
-
-  {{#unless selected_name}}
-  <div class="none">Click a player to select</div>
-  {{/unless}}
+<template name="worldhack">
+  {{#each photos}}
+    {{> photo}}
+  {{/each}}
 </template>
 
-<template name="player">
-  <div class="player {{selected}}">
-    <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
-  </div>
+<template name="photo">
+  <img class="photo" src="{{image_url}}">
 </template>
 
