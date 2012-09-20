@@ -10,19 +10,28 @@
   </section>
 
   <section class="row-fluid">
-    <section class="span12">
-      {{> worldhack}}
-    </section>
+    {{> worldhack}}
   </section>
 </body>
 
 <template name="worldhack">
-  {{#each photos}}
-    {{> photo}}
-  {{/each}}
+  <section class="span12">
+    {{#each meta}}
+      {{> meta}}
+    {{/each}}
+  </section>
+  <section class="span12">
+    <h2>Check out the photos:</h2>
+    {{#each photos}}
+      {{> photo}}
+    {{/each}}
+  </section>
 </template>
 
 <template name="photo">
-  <img class="photo" src="{{image_url}}">
+  <a href="http://500px.com/photo/{{id}}"><img class="photo" src="{{image_url}}"></a>
 </template>
 
+<template name="meta">
+  <h1>Nikon/Canon index today is: {{nikonIndex}}!</h1>
+</template>

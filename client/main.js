@@ -1,9 +1,11 @@
 Meteor.subscribe("photos");
 
+Meteor.subscribe("meta");
+
 Template.worldhack.photos = function () {
     return Photos.find();
 };
 
-Template.worldhack.nikonIndex = function () {
-    return nikonIndex();
+Template.worldhack.meta = function () {
+    return Meta.find();
 };

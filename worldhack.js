@@ -1,5 +1,7 @@
 Photos = new Meteor.Collection("photos");
 
+Meta = new Meteor.Collection("meta");
+
 
 // Set up a collection to contain player information. On the server,
 // it is backed by a MongoDB collection named "players."

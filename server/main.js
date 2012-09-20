@@ -1,6 +1,6 @@
 Meteor.startup(function() {
     // Limit database write to server side only
-    var collections = ['photos'];
+    var collections = ['photos', 'meta'];
 
     _.each(collections, function(collection) {
         _.each(['insert', 'update', 'remove'], function(method) {
@@ -14,6 +14,9 @@ Meteor.startup(function() {
         return Photos.find();
     });
 
+    Meteor.publish("meta", function() {
+        return Meta.find();
+    });
 
 });
 
@@ -69,9 +72,16 @@ function updatePhotos() {
 
           // var photo = photos[i];
 
+          var nikon = new RegExp('nikon','i');
+
+          console.log(photo.camera + " | " + nikon.test(photo.camera));
+
           Photos.insert(photo);
         });
       }
+
+      Meta.remove({});
+      Meta.insert({ "nikonIndex": 69 });
 
       console.log('updatePhotos');
   });
