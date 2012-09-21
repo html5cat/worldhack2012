@@ -9,6 +9,8 @@
     {{> loginButtons}}
   </section>
 
+  <h1>The Ultimate Nikon vs. Canon Deathmatch!</h1>
+
   <section class="row-fluid">
     {{> worldhack}}
   </section>
@@ -16,12 +18,14 @@
 
 <template name="worldhack">
   <section class="span12">
-    {{#each meta}}
-      {{> item}}
-    {{/each}}
+    <section class="row-fluid">
+      {{#each meta}}
+        {{> item}}
+      {{/each}}
+    </section>
   </section>
   <section class="span12">
-    <h2>Check out the photos:</h2>
+    <h3>Check out the photos:</h3>
     {{#each photos}}
       {{> photo}}
     {{/each}}
@@ -29,10 +33,9 @@
 </template>
 
 <template name="photo">
-  <a href="http://500px.com/photo/{{id}}"><img class="photo" src="{{image_url}}"></a>
+  <a href="http://500px.com/photo/{{id}}"><img class="photo {{brand}}" src="{{image_url}}"></a>
 </template>
 
 <template name="item">
-  <h2><article>{{name}} - {{count}}</article></h2>
-  <article id="{{name}}Gauge" class="span12" style="height:100px;"></article>
+  <article class="span6 {{name}}"><h2>{{name}} - <span>{{count}}</span></h2></article>
 </template>

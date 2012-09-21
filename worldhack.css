@@ -1,6 +1,6 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 100;
     margin: 50px 0;
     padding: 0;
     -webkit-user-select: none;
@@ -9,6 +9,21 @@ body {
     -o-user-select: none;
     user-select: none;
     background: #d1d1d1;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+    margin-left: 5px;
+    font-size: 33px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 46px;
+    text-align: center;
 }
 
 #outer {
@@ -72,4 +87,29 @@ body {
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.15);
     margin: 10px 5px;
+}
+
+.Nikon {
+    color: yellow;
+}
+
+.Canon {
+    color: red;
+}
+
+.Nikon span, .Canon span {
+    color: black;
+    font-size: 36px;
+}
+
+img {
+    border: 2px solid rgba(0,0,255,0.3);
+}
+
+img.Canon {
+    border: 2px solid rgba(255,0,0,0.3);
+}
+
+img.Nikon {
+    border: 2px solid rgba(255,255,0,0.3);
 }

@@ -21,7 +21,7 @@ Meteor.startup(function() {
 });
 
 var size = '&image_size=2&rpp=100';
-var pxConsumerKey = '&consumer_key=is24Rs626KQssmLQhZ7uURpbB3MwxbaTwT1Bpbpu';
+var pxConsumerKey = '&consumer_key=RYafCifk7eaKjnBZ5Oozzj0RVsNLtC6UxPIDRy9v';
 
 
 function getPhotosUrl(feature) {
@@ -82,11 +82,13 @@ function updatePhotos() {
 
           if ( nikon.test(photo.camera) ){
             nikonCount++;
+            photo.brand = "Nikon";
             Meta.update({_id: nikonId}, {name: "Nikon", count: nikonCount });
           }
 
           if ( canon.test(photo.camera) ){
             canonCount++;
+            photo.brand = "Canon";
             Meta.update({_id: canonId}, {name: "Canon", count: canonCount });
           }
 
