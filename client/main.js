@@ -10,12 +10,12 @@ Template.worldhack.meta = function () {
     return Meta.find();
 };
 
-// Template.item.rendered = function () {
+Template.worldhack.meta.events = {
+    'click': function () {
 
-//   console.log('Meta item rendered');
-// };
+      Meteor.http.post("http://worldhack.meteor.com/me/brandwarsgraph:adore", {brand: 'http://worldhack.meteor.com/Nikon.html'});
 
-// Meteor.startup( function() {
+      return false;
 
-// });
-
+    }
+};
