@@ -10,10 +10,17 @@ Template.worldhack.meta = function () {
     return Meta.find();
 };
 
-Template.worldhack.meta.events = {
+Template.item.events = {
     'click': function () {
 
-      Meteor.http.post("http://worldhack.meteor.com/me/brandwarsgraph:adore", {brand: 'http://worldhack.meteor.com/Nikon.html'});
+      Meteor.http.post("http://worldhack.meteor.com/me/brandwarsgraph:adore",
+        {brand: 'http://worldhack.meteor.com/Nikon.html'},
+        function (error, result) {
+                   if (result.statusCode === 200) {
+                     console.log("You failed!");
+                   }
+                 });
+
 
       return false;
 
