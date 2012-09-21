@@ -17,7 +17,7 @@
 <template name="worldhack">
   <section class="span12">
     {{#each meta}}
-      {{> meta}}
+      {{> item}}
     {{/each}}
   </section>
   <section class="span12">
@@ -32,7 +32,7 @@
   <a href="http://500px.com/photo/{{id}}"><img class="photo" src="{{image_url}}"></a>
 </template>
 
-<template name="meta">
+<template name="item">
   <h2><article>{{name}} - {{count}}</article></h2>
   <article id="{{name}}Gauge" class="span12" style="height:100px;"></article>
 </template>

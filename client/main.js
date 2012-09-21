@@ -10,10 +10,10 @@ Template.worldhack.meta = function () {
     return Meta.find();
 };
 
-// Template.meta.rendered = function () {
+Template.item.rendered = function () {
 
-//   console.log('Template meta rendered');
-// };
+  console.log('Meta item rendered');
+};
 
 // Meteor.startup( function() {
 

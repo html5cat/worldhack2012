@@ -64,8 +64,8 @@ function updatePhotos() {
       var nikonId = Meta.insert({name: "Nikon", count: nikonCount });
       var canonId = Meta.insert({name: "Canon", count: canonCount });
 
-      var canon = new RegExp('canon','i');
       var nikon = new RegExp('nikon','i');
+      var canon = new RegExp('canon','i');
 
       for (var i = 0; i < photos.length; i++) {
 
@@ -90,7 +90,7 @@ function updatePhotos() {
             Meta.update({_id: canonId}, {name: "Canon", count: canonCount });
           }
 
-          // console.log(nikonCount + " | " + canonCount);
+          console.log(nikonCount + " | " + canonCount);
 
           Photos.insert(photo);
         });
