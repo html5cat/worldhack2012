@@ -5,13 +5,16 @@
 </head>
 
 <body>
-  <button onclick="navigator.mozApps.install('http://worldhack.meteor.com/manifest.webapp'); return false;">
-    Install this awesome app on your homescreen!
-  </button>
+  <section class="ff-install row-fluid">
+    <button class="span6 offset3 btn btn-large btn-primary" onclick="navigator.mozApps.install('http://worldhack.meteor.com/manifest.webapp'); return false;">
+      Install to your FirefoxOS!
+    </button>
+    <br><br><br>
+  </section>
 
-  <h1>The Ultimate Nikon 👑 vs. Canon 💩 Deathmatch!</h1>
 
   <section class="row-fluid">
+  <h1>The Ultimate Nikon 👑 vs. Canon 💩 Deathmatch!</h1>
     {{> worldhack}}
   </section>
 <!--   <a href="https://github.com/dybskiy/worldhack2012"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
