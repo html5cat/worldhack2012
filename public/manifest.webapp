@@ -1,4 +1,8 @@
 {
-  "name": "My App",
-  "description": "My elevator pitch goes here"
+  "name": "Camera Battle",
+  "description": "The Ultimate Nikon 👑 vs. Canon 💩 Deathmatch!",
+   "developer": {
+    "name": "Yuriy Dybskiy",
+    "url": "http://dybskiy.com"
+  }
 }
