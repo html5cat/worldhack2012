@@ -8,7 +8,8 @@ body {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
-    background: #d1d1d1;
+    background: #000;
+    color: #fff;
 }
 
 h1, h2, h3 {
@@ -102,7 +103,7 @@ h2 a {
 }
 
 .Nikon span, .Canon span {
-    color: black;
+    color: #bada55;
     font-size: 36px;
 }
 
