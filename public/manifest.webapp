@@ -4,5 +4,8 @@
    "developer": {
     "name": "Yuriy Dybskiy",
     "url": "http://dybskiy.com"
+  },
+  "icons": {
+    "128": "http://icongal.com/gallery/image/37864/nikon_camera_photography.png"
   }
 }
