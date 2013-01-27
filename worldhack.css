@@ -118,3 +118,10 @@ img.Canon {
 img.Nikon {
     border: 2px solid rgba(255,255,0,0.3);
 }
+.ff-install {
+    display: none;
+}
+
+.ff-install.show{
+    display: block;
+}

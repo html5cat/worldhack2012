@@ -10,6 +10,38 @@ Template.worldhack.meta = function () {
     return Meta.find();
 };
 
+Template.worldhack.agent = function () {
+    return navigator.userAgent;
+};
+
+Template.worldhack.ffInstalled = function () {
+
+
+  if (navigator.mozApps) {
+    // //Mozilla web apps
+    // install.type = 'mozilla';
+
+    request = navigator.mozApps.getSelf();
+    request.onsuccess = function () {
+        if (this.result) {
+            console.log('installed');
+
+            return 'installed';
+        } else {
+            return'uninstalled';
+        }
+    };
+  }
+};
+
+Template.worldhack.showFF = function () {
+  if ((navigator.userAgent.indexOf("Mobile; rv:18.0") > -1) ||
+     (navigator.userAgent.indexOf("Firefox/20.0") > -1)) {
+      return 'show';
+  }
+};
+
+
 Template.item.events = {
     'click': function () {
 
